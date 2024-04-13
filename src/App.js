@@ -1,7 +1,7 @@
 import './App.css';
 import Product from './components/Product';
 import products from './data/index'
-
+const TOKEN = '7000242911:AAFID_HmudqFWo3HQFo9B3W6nNGQdAnhHqA'
 function App() {
   console.log(products)
   return (

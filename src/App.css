@@ -27,12 +27,14 @@
 .product img{
   width: 100%;
   object-position: center;
-  object-fit: cover;
+  object-fit: fill;
   height: 200px;
   transition: .3s all ease-in-out;
 }
 .product img:hover{
   transform: scale(0.7);
+  object-fit: fill;
+  object-position: center;
 }
 
 p {
