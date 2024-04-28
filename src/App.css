@@ -23,12 +23,13 @@
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   border: 4px;
   min-width: 140px;
+  position: relative;
 }
 .product img{
   width: 100%;
   object-position: center;
   object-fit: fill;
-  height: 200px;
+  height: 150px;
   transition: .3s all ease-in-out;
 }
 .product img:hover{
@@ -43,4 +44,45 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   background-color: white;
+}
+.actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: white;
+  padding-top: 5px;
+}
+.actions svg{
+  fill: white;
+}
+.actions div, .actions svg {
+  background-color: red;
+}
+.actions div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.actions .add, .actions .add svg{
+  background-color: rgb(228, 205, 0);
+}
+.incart{
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  background-color: rgb(228, 205, 0);
+  color: white;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
 }
