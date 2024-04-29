@@ -6,7 +6,7 @@ const Product = (props)=>{
   
     
     
-    const item = cart.find(p => p.id == props.product.id)
+    const item = cart.find(p => p.id === props.product.id)
    
     
     return (
