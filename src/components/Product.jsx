@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { useShoppingCart } from "../context/useShoppingCart"
 
 const Product = (props)=>{
