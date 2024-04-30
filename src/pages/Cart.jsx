@@ -22,7 +22,7 @@ const Cart = ()=>{
         cost += item.price*item.count
       });
       setTotal(cost)
-    },[cart])
+    },[cart,navigate])
     return (
         <div class="products flex" style={{width:'100%', maxWidth:'768px', margin:'0 auto',paddingTop:'20px'}}>
         <div className="header">
