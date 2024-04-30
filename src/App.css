@@ -86,3 +86,50 @@ p {
   font-size: 12px;
   font-weight: 600;
 }
+.cart *{
+  background-color: white;
+}
+
+.cart{
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+}
+.cart .item{
+  padding: 5px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+}
+.cart .item img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+}
+.cart .item div{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+.cart .info{
+  flex: 1;
+}
+.cart span{
+  font-size: 12px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}

@@ -3,7 +3,7 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 import Product from '../components/Product';
 import { useShoppingCart } from '../context/useShoppingCart';
 import products from '../data/index'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Products = ()=>{
     const { cart } = useShoppingCart()
