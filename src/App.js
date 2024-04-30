@@ -1,8 +1,4 @@
-import { MainButton } from '@vkruglikov/react-telegram-web-app';
 import './App.css';
-import Product from './components/Product';
-import { useShoppingCart } from './context/useShoppingCart';
-import products from './data/index'
 import {
   createBrowserRouter,
   RouterProvider,
