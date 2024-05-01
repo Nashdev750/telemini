@@ -15,7 +15,7 @@ const reducer = (state, action) => {
   switch (action.type) {
     case ADD_ITEM:
       // Check if the item already exists in the cart
-      const existingItemIndex = state.items.findIndex(item => item.id === action.payload.id);
+      const existingItemIndex = state.items.findIndex(item => item._id === action.payload._id);
       if (existingItemIndex !== -1) {
         // If the item exists, increment its count
         const updatedItems = state.items.map((item, index) => {
@@ -37,7 +37,7 @@ const reducer = (state, action) => {
       }
     case REMOVE_ITEM:
       const items = state.items.map(item => {
-          if (item.id === action.payload) {
+          if (item._id === action.payload) {
               return { ...item, count: item.count - 1 };
           }
           return item;

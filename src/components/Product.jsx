@@ -8,7 +8,7 @@ const Product = (props)=>{
   
     
     
-    const item = cart.find(p => p.id === props.product.id)
+    const item = cart.find(p => p._id === props.product._id)
    
     
     return (
@@ -20,7 +20,7 @@ const Product = (props)=>{
            <p>{name}</p>
            <p>${price}</p>
            <div className="actions">
-            <div style={{visibility:`${item?"visible":"hidden"}`}} className="remove" role="button" onClick={e=>removeItemFromCart(props.product.id)}>
+            <div style={{visibility:`${item?"visible":"hidden"}`}} className="remove" role="button" onClick={e=>removeItemFromCart(props.product._id)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                 <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
                 </svg>
