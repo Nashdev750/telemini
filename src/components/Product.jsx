@@ -1,8 +1,10 @@
 import { useShoppingCart } from "../context/useShoppingCart"
 
+import baseurl from '../http/public'
+
 const Product = (props)=>{
     const { cart, addItemToCart, removeItemFromCart } = useShoppingCart()
-    const {title,price,image} = props.product
+    const {name,price,image} = props.product
   
     
     
@@ -14,8 +16,8 @@ const Product = (props)=>{
             {item &&
                 <div className="incart">{item.count}</div>
             }
-           <img src={image} alt="" />
-           <p>{title}</p>
+           <img src={`${baseurl}${image}`} alt="" />
+           <p>{name}</p>
            <p>${price}</p>
            <div className="actions">
             <div style={{visibility:`${item?"visible":"hidden"}`}} className="remove" role="button" onClick={e=>removeItemFromCart(props.product.id)}>
