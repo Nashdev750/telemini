@@ -1,2 +1,2 @@
-const baseUrl = 'http://85.239.244.103/api/public/'
+const baseUrl = 'https://ac9789.store/api/public/'
 export default baseUrl
