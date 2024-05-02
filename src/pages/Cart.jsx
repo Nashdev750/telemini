@@ -2,9 +2,10 @@ import { useEffect, useState } from "react"
 import { useShoppingCart } from "../context/useShoppingCart"
 import { Link, useNavigate } from "react-router-dom"
 import { MainButton } from "@vkruglikov/react-telegram-web-app";
+import baseUrl from "../http/public";
 
 function truncateString(str, maxLength) {
-    if (str.length > maxLength) {
+    if (str?.length > maxLength) {
         return str.substring(0, maxLength - 3) + '...';
     }
     return str;
@@ -32,10 +33,10 @@ const Cart = ()=>{
         <div className="cart">
           {cart &&
             cart.map((item,i)=>(
-                <div className="item">
-                    <img src={item.image} alt="" />
+                <div className="item" key={i}>
+                    <img src={`${baseUrl}${item.image}`} alt="" />
                     <div className="info">
-                        <span>{truncateString(item.title,30)} <small style={{color:'rgb(228, 205, 0)'}}> x{ item.count}</small></span>
+                        <span>{truncateString(item.name,30)} <span style={{color:'rgb(228, 205, 0)'}}> x{ item.count}</span></span>
                         <span>{truncateString(item.description, 30)}</span>
                     </div>
                     <div>
