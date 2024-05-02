@@ -19,7 +19,6 @@ const Products = ()=>{
     },[])
   return (
     <div class="products flex" style={{width:'100%', maxWidth:'768px', margin:'0 auto',paddingTop:'20px'}}>
-    <Link to={'/cart'}>Test</Link>
     {products.map((data,i)=>(
       <Product key={i} product = {data} />
     ))}
