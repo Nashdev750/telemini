@@ -40,7 +40,7 @@ const Cart = ()=>{
         if(loading) return
         window.Telegram.WebApp.showPopup({
             title: 'Submit Order',
-            message: 'Would you like to complete this order?',
+            message: 'Would you like to place this order?',
             buttons: [
                 {id: 'order', type: 'default', text: 'Yes'},
                 {type: 'cancel'},
