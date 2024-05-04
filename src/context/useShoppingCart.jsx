@@ -1,9 +1,12 @@
 // ShoppingCartContext.js
 import React, { createContext, useReducer, useContext } from 'react';
 
+
+const adderess = window.localStorage.getItem('shipping')
 // Define initial state
 const initialState = {
   items: [],
+  shippingdetails:adderess?JSON.parse(adderess):undefined
 };
 
 // Define actions
@@ -46,6 +49,7 @@ const reducer = (state, action) => {
         const newitems = items.filter(itm=>itm.count>0)
         return {...state, items: newitems}
     case ADD_SHIPPING:
+         window.localStorage.setItem("shipping",JSON.stringify(action.payload))
          return {...state, shippingdetails: action.payload}
     default:
       return state;

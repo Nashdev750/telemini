@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { useShoppingCart } from "../context/useShoppingCart"
 import { useNavigate } from "react-router-dom"
 import { InputTextarea } from "primereact/inputtextarea";
+import { MainButton } from "@vkruglikov/react-telegram-web-app";
 
 
 const Checkout = ()=>{
@@ -78,6 +79,7 @@ return  (
                 </button>
             </div> 
         </div>
+        <MainButton text={"Save shipping Details"} onClick={e=>document.querySelector('.btn').click()} />
     </form>
 )
 }

@@ -107,7 +107,7 @@ const Cart = ()=>{
         </>
         }
          <MainButton text={`${details?'Confirm Order':'Checkout'} $${total.toFixed(2)}`} onClick={handleCheckout} />
-         {/* <button onClick={handleCheckout}>{`${details?'Confirm Order':'Checkout'} $${total.toFixed(2)}`}</button> */}
+         <button onClick={handleCheckout}>{`${details?'Confirm Order':'Checkout'} $${total.toFixed(2)}`}</button>
         </div>
     )
 }

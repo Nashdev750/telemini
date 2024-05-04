@@ -25,7 +25,7 @@ const Products = ()=>{
     {cart?.length > 0 &&
     <> 
       <MainButton text="VIEW ORDER" onClick={()=>{navigate('/cart')}}/>
-      {/* <button onClick={()=>{navigate('/cart')}}>VIEW ORDER</button> */}
+      <button onClick={()=>{navigate('/cart')}}>VIEW ORDER</button>
     </>  
     }
  </div>
