@@ -3,6 +3,7 @@ import { useShoppingCart } from "../context/useShoppingCart"
 import { Link, useNavigate } from "react-router-dom"
 import { MainButton } from "@vkruglikov/react-telegram-web-app";
 import baseUrl from "../http/public";
+import axios from "axios";
 
 function truncateString(str, maxLength) {
     if (str?.length > maxLength) {
@@ -16,6 +17,8 @@ const Cart = ()=>{
     const {cart,details} = useShoppingCart()
     const navigate  = useNavigate()
     const [total, setTotal] = useState(0)
+    const [loading,setLoading] = useState(false)
+
     useEffect(()=>{
       if(!cart?.length > 0) navigate('/')
       let cost = 0
@@ -27,12 +30,35 @@ const Cart = ()=>{
     
     const handleCheckout = ()=>{
         if(details){
-            // save order and go to thank you age
-            navigate('/thankyou')
+            submitorder()
         }else{
             navigate('/checkout')
         }
     }
+
+    const submitorder = ()=> {
+        if(loading) return
+        window.Telegram.WebApp.showPopup({
+            title: 'Submit Order',
+            message: 'Would you like to complete this order?',
+            buttons: [
+                {id: 'order', type: 'default', text: 'Yes'},
+                {type: 'cancel'},
+            ]
+        }, function(btn) {
+            if (btn === 'order') {
+                setLoading(true)
+                axios.post('https://ac9789.store/api/order/create',{shippingdetails:details,items:cart})
+                .then(data=>{
+                    setLoading(false)
+                    navigate('/thankyou') 
+                })
+                .catch(err=>{
+                    setLoading(false)
+                })
+            }
+        });
+    };
 
     return (
         <div class="products flex" style={{gap:'10px',width:'100%', maxWidth:'768px', margin:'0 auto',paddingTop:'20px'}}>
