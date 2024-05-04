@@ -23,15 +23,15 @@ useEffect(()=>{
       element: <Products/>,
     },
     {
-      path: "cart",
+      path: "/cart",
       element: <Cart/>,
     },
     {
-      path: "checkout",
+      path: "/checkout",
       element: <Checkout/>
     },
     {
-      path: "thankyou",
+      path: "/thankyou",
       element: <ThankYou/>
     },
   ]);
