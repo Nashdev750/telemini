@@ -172,3 +172,21 @@ input{
   align-items: center;
   gap: 10px;
 }
+.thankyou{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.thankyou h1{
+  text-align: center;
+}
+.thankyou svg{
+  height: 60px;
+  fill: rgb(10, 152, 97);
+}
