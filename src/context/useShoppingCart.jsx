@@ -9,6 +9,7 @@ const initialState = {
 // Define actions
 const ADD_ITEM = 'ADD_ITEM';
 const REMOVE_ITEM = 'REMOVE_ITEM';
+const ADD_SHIPPING = 'ADD_SHIPPING';
 
 // Define reducer function
 const reducer = (state, action) => {
@@ -44,6 +45,8 @@ const reducer = (state, action) => {
         })
         const newitems = items.filter(itm=>itm.count>0)
         return {...state, items: newitems}
+    case ADD_SHIPPING:
+         return {...state, shipping: action.payload}
     default:
       return state;
   }
@@ -60,6 +63,9 @@ export const ShoppingCartProvider = ({ children }) => {
   const addItemToCart = item => {
     dispatch({ type: ADD_ITEM, payload: item });
   };
+  const addShippingDetails = details => {
+    dispatch({ type: ADD_SHIPPING, payload: details });
+  };
 
   const removeItemFromCart = itemId => {
     dispatch({ type: REMOVE_ITEM, payload: itemId });
@@ -67,7 +73,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
   return (
     <ShoppingCartContext.Provider
-      value={{ cart: state.items, addItemToCart, removeItemFromCart }}
+      value={{ cart: state.items,details:state?.details, addItemToCart, removeItemFromCart, addShippingDetails }}
     >
       {children}
     </ShoppingCartContext.Provider>
