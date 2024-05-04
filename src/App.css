@@ -137,4 +137,38 @@ input{
   padding: 5px;
   background-color: white;
   max-width: 100% !important;
+  width: 100%;
+}.form-control {
+  width: 100% !important;
+}
+.shipping{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: 1px solid whitesmoke;
+}
+.shipping .info{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+
+}
+.shipping .info span:last-child{
+ color: rgb(118, 118, 118);
+
+}
+.btn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }

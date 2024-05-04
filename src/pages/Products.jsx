@@ -22,8 +22,11 @@ const Products = ()=>{
     {products.map((data,i)=>(
       <Product key={i} product = {data} />
     ))}
-    {cart?.length > 0 && 
+    {cart?.length > 0 &&
+    <> 
       <MainButton text="VIEW ORDER" onClick={()=>{navigate('/cart')}}/>
+      {/* <button onClick={()=>{navigate('/cart')}}>VIEW ORDER</button> */}
+    </>  
     }
  </div>
   )

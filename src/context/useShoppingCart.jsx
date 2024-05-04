@@ -46,7 +46,7 @@ const reducer = (state, action) => {
         const newitems = items.filter(itm=>itm.count>0)
         return {...state, items: newitems}
     case ADD_SHIPPING:
-         return {...state, shipping: action.payload}
+         return {...state, shippingdetails: action.payload}
     default:
       return state;
   }
@@ -73,7 +73,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
   return (
     <ShoppingCartContext.Provider
-      value={{ cart: state.items,details:state?.details, addItemToCart, removeItemFromCart, addShippingDetails }}
+      value={{ cart: state.items,details:state?.shippingdetails, addItemToCart, removeItemFromCart, addShippingDetails }}
     >
       {children}
     </ShoppingCartContext.Provider>
