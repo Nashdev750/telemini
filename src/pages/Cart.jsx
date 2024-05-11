@@ -48,7 +48,8 @@ const Cart = ()=>{
         }, function(btn) {
             if (btn === 'order') {
                 setLoading(true)
-                axios.post('https://ac9789.store/api/order/create',{shippingdetails:details,items:cart})
+                const chatid = window.Telegram.WebApp.initDataUnsafe.user.id
+                axios.post('https://ac9789.store/api/order/create',{shippingdetails:details,items:cart,chatid})
                 .then(data=>{
                     setLoading(false)
                     navigate('/thankyou') 

@@ -10,20 +10,18 @@ import Checkout from './pages/Checkout';
 import ThankYou from "./pages/ThankYou";
 
 function App() {
-  const [initdata, setInitdata] = useState("")
 
 useEffect(()=>{
   if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.enableClosingConfirmation) {
       window.Telegram.WebApp.enableClosingConfirmation();
       console.log(window.Telegram.WebApp)
-      setInitdata(JSON.stringify(window.Telegram.WebApp))
   }
 },[])
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <><h5 style={{width:"300px"}}>{initdata}</h5><Products/></>,
+      element: <><Products/></>,
     },
     {
       path: "/cart",
