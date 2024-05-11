@@ -18,6 +18,7 @@ const Cart = ()=>{
     const navigate  = useNavigate()
     const [total, setTotal] = useState(0)
     const [loading,setLoading] = useState(false)
+    const [orderid,setOrderid] = useState(Date.now())
 
     useEffect(()=>{
       if(!cart?.length > 0) navigate('/')
@@ -49,7 +50,7 @@ const Cart = ()=>{
             if (btn === 'order') {
                 setLoading(true)
                 const chatid = window.Telegram.WebApp.initDataUnsafe.user.id
-                axios.post('https://ac9789.store/api/order/create',{shippingdetails:details,items:cart,chatid})
+                axios.post('https://ac9789.store/api/order/create',{shippingdetails:details,items:cart,chatid,orderid})
                 .then(data=>{
                     setLoading(false)
                     navigate('/thankyou') 
@@ -64,7 +65,7 @@ const Cart = ()=>{
     return (
         <div class="products flex" style={{gap:'10px',width:'100%', maxWidth:'768px', margin:'0 auto',paddingTop:'20px'}}>
         <div className="header">
-            <span>YOUR ORDER</span>
+            <span>YOUR ORDER #{orderid}</span>
             <Link to={'/'}>Edit</Link>
         </div>
         <div className="cart">
