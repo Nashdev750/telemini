@@ -6,36 +6,38 @@
 }
 .products{
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  justify-content: start;
+  align-items: stretch;
+  padding: 10px;
 }
 .product{
   background-color: white;
-  width: 25%;
+  width: 33.333%;
   height: fit-content;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-  border: 4px;
-  min-width: 140px;
   position: relative;
+  padding: 10px;
 }
 .product img{
   width: 100%;
   object-position: center;
   object-fit: fill;
-  height: 150px;
+  height: auto;
   transition: .3s all ease-in-out;
+  padding: 10px;
+  background: white;
 }
 .product img:hover{
   transform: scale(0.7);
   object-fit: fill;
   object-position: center;
+}
+.product p{
+  font-size: 10px;
 }
 
 p {
@@ -52,12 +54,13 @@ p {
   width: 100%;
   background: white;
   padding-top: 5px;
+  gap: 5px;
 }
 .actions svg{
   fill: white;
 }
 .actions div, .actions svg {
-  background-color: red;
+  background-color: #e64daa;
 }
 .actions div{
   display: flex;
@@ -68,10 +71,11 @@ p {
   cursor: pointer;
 }
 .actions .add, .actions .add svg{
-  background-color: rgb(228, 205, 0);
+  background-color: #fa8917;
 }
 .incart{
   position: absolute;
+  z-index: 999;
   top: -4px;
   right: -4px;
   padding: 5px;
