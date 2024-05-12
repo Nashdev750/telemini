@@ -10,22 +10,21 @@
   align-items: stretch;
   padding: 20px;
   background: white !important;
-  gap: 25px;
+  gap: 20px;
 }
 .product{
   background-color: white;
-  width: 70px;
+  width: 75px;
   height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin-bottom: 20px;
 }
 .product img{
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   object-position: center;
   object-fit: fill;
   height: auto;
