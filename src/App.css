@@ -6,36 +6,34 @@
 }
 .products{
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: space-between;
   align-items: stretch;
   padding: 10px;
+  background: white;
+  min-height: 100%;
 }
 .product{
   background-color: white;
-  width: 33.333%;
-  height: fit-content;
-  cursor: pointer;
+  width: 70px;
+  height: 120px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   position: relative;
-  padding: 10px;
+  margin-bottom: 20px;
 }
 .product img{
-  width: 100%;
+  width: 60px;
+  height: 60px;
   object-position: center;
   object-fit: fill;
   height: auto;
   transition: .3s all ease-in-out;
-  padding: 10px;
+  
   background: white;
 }
-.product img:hover{
-  transform: scale(0.7);
-  object-fit: fill;
-  object-position: center;
-}
+
 .product p{
   font-size: 10px;
 }
@@ -66,8 +64,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding:  5px 7px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .actions .add, .actions .add svg{
@@ -82,7 +80,7 @@ p {
   display: flex;
   justify-content: center;
   justify-items: center;
-  background-color: rgb(228, 205, 0);
+  background-color: #fa8917;
   color: white;
   height: 25px;
   width: 25px;
