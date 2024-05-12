@@ -8,9 +8,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
-  padding: 10px;
-  background: white;
-  min-height: 100%;
+  padding: 20px;
+  background: white !important;
+  min-height: 100vh;
+  gap: 25px;
 }
 .product{
   background-color: white;
